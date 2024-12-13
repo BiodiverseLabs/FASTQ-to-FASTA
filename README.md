@@ -20,7 +20,7 @@ This repository provides a simple Python script to convert all .fastq files in a
 
 Clone this repository:
 
-git clone https://github.com/your-username/fastq-to-fasta.git
+git clone https://github.com/BiodiverseLabs/fastq-to-fasta.git
 cd fastq-to-fasta
 
 Install the required Python package:
