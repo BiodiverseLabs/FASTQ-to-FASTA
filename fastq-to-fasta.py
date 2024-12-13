@@ -1,23 +1,18 @@
 import os
 from Bio import SeqIO
 
-def convert_fastq_to_fasta(folder_path):
+def convert_fastq_to_fasta():
     """
-    Converts all .fastq files in the given folder to .fasta files.
-
-    Parameters:
-        folder_path (str): Path to the folder containing .fastq files.
+    Converts all .fastq files in the current working directory to .fasta files.
     """
-    # Check if the folder exists
-    if not os.path.exists(folder_path):
-        print(f"Error: The folder '{folder_path}' does not exist.")
-        return
+    # Get the current working directory
+    folder_path = os.getcwd()
 
     # Get all .fastq files in the folder
     fastq_files = [f for f in os.listdir(folder_path) if f.endswith(".fastq")]
 
     if not fastq_files:
-        print("No .fastq files found in the folder.")
+        print("No .fastq files found in the current working directory.")
         return
 
     for fastq_file in fastq_files:
@@ -32,6 +27,10 @@ def convert_fastq_to_fasta(folder_path):
             print(f"Converted: {fastq_file} -> {os.path.basename(output_path)}")
         except Exception as e:
             print(f"Error converting {fastq_file}: {e}")
+
+if __name__ == "__main__":
+    convert_fastq_to_fasta()
+
 
 if __name__ == "__main__":
     # Change this to the path of your working folder
